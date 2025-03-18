@@ -1,0 +1,10 @@
+@model Model.Article
+@{
+    ViewData["Title"] = "Create or Update";
+}
+<h2>Creating or Updating Record</h2>
+<form action="/Article/Create" method="post">
+    <input name="articleId" type="text" />
+    <input name="articleTitle" type="text" />
+    <button type="submit">Create or Update</button>
+</form>

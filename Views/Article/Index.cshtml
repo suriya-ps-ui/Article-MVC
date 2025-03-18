@@ -1,0 +1,36 @@
+@model List<Model.Article>
+@{
+    ViewData["Title"] = "Articles";
+}
+<h2>Articles</h2>
+
+<form action="/Article/Create" method="get">
+    <button type="submit">Create New</button>
+</form>
+<form action="/Account/Logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var article in Model){
+            <tr>
+                <td>@article.articleId</td>
+                <td>@article.articleTitle</td>
+                <td>
+                    <form action="/Article/Delete" method="post">
+                        <input type="hidden" name="id" value="@article.articleId" />
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

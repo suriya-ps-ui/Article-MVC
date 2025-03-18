@@ -1,0 +1,10 @@
+@model Model.Login
+@{
+    ViewData["Title"] = "Login";
+}
+<h2>Login</h2>
+<form action="/Account/Login" method="post">
+    <input name="userName" type="text" />
+    <input name="userPassword" type="password" />
+    <button type="submit">Login</button>
+</form>
