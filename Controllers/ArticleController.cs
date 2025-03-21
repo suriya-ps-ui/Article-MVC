@@ -25,7 +25,8 @@ namespace Controllers{
                 return View(article);
             }
             var token=HttpContext.Session.GetString("Token");
-            await apiService.CreateUpdateArticlesAsync(token,article);
+            try{await apiService.CreateUpdateArticlesAsync(token,article);}
+            catch(Exception){return View();}
             return RedirectToAction("Index");
         }
 
